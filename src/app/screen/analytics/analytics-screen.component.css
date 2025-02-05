@@ -1,0 +1,151 @@
+.analytics-container {
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.spacer {
+  width: 3rem; /* Same as back-button width to center the title */
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.back-button {
+  background-color: var(--military-green-dark);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button:hover {
+  transform: scale(1.1);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background-color: var(--military-green-dark);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.stat-card p {
+  margin: 0.5rem 0;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--military-green-darker) transparent; /* Firefox */
+}
+
+/* Webkit scrollbar styling */
+.filter-buttons::-webkit-scrollbar {
+  height: 6px;
+}
+
+.filter-buttons::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.filter-buttons::-webkit-scrollbar-thumb {
+  background-color: var(--military-green-darker);
+  border-radius: 6px;
+}
+
+.filter-buttons button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--military-green-dark);
+  color: white;
+  border: 2px solid var(--military-green-darker);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.filter-buttons button:hover {
+  background-color: var(--military-green-darker);
+  transform: scale(1.05);
+}
+
+.filter-buttons button.active {
+  background-color: var(--military-green-darker);
+  border-color: white;
+}
+
+.question-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stats {
+  opacity: 0.9;
+}
+
+.bottom-actions {
+  display: flex;
+  padding-top: 5rem;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.reset-button {
+  padding: 0.8rem 2rem;
+  min-width: 150px;
+  font-size: 1rem;
+  background-color: #c62828;
+  color: white;
+  border: 2px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reset-button:hover {
+  transform: scale(1.05);
+  background-color: white;
+  color: #c62828;
+} 

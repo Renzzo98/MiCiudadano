@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --military-green-primary: #4b5320;
+  --military-green-dark: #2c3119;
+  --military-green-darker: #1a1f0f;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--military-green-primary);
+}
+
+* {
+  box-sizing: border-box;
+}

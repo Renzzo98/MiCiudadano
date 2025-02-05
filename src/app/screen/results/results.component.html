@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="content">
+    <h1 class="title">Session Results</h1>
+    
+    <div class="results-card">
+      <div class="score-section">
+        <div class="score-item correct">
+          <span class="score-number">{{numCorrect}}</span>
+          <span class="score-label">Correct</span>
+        </div>
+        <div class="score-item incorrect">
+          <span class="score-number">{{numWrong}}</span>
+          <span class="score-label">Incorrect</span>
+        </div>
+      </div>
+      
+      <div class="percentage">
+        <span class="percentage-number">{{percentageCorrect | number:'1.0-0'}}%</span>
+        <span class="percentage-label">Success Rate</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="actions">
+  <button class="action-button retry" routerLink="/session">
+    Try Again
+  </button>
+  <button class="action-button home" routerLink="/">
+    Home
+  </button>
+</div> 

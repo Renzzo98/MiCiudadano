@@ -1,0 +1,30 @@
+<div class="card" [class.flipped]="isFlipped">
+  <div class="card-inner">
+    <!-- Front of card -->
+    <div class="card-front">
+      <h2 class="question">{{question.question}}</h2>
+      <button class="reveal-button" (click)="flipCard()">
+        Show Answer
+      </button>
+    </div>
+    
+    <!-- Back of card -->
+    <div class="card-back">
+        <div class="answer-content">
+            <h3 class="answer">{{question.correctAnswer}}</h3>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="answer-actions" *ngIf="isFlipped">
+    <p class="button-group-text">Did you get it right?</p>
+    <div class="button-group">
+        <button class="answer-button correct" (click)="onAnswerSelected(true)">
+        Correct
+        </button>
+        <button class="answer-button wrong" (click)="onAnswerSelected(false)">
+        Wrong
+        </button>
+    </div>
+</div> 

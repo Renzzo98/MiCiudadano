@@ -1,0 +1,45 @@
+<div class="analytics-container">
+  <div class="header">
+    <button class="back-button" (click)="goBack()">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <h1>Practice Analytics</h1>
+    <div class="spacer"></div>
+  </div>
+
+  <div class="filter-buttons">
+    <button 
+      [class.active]="activeFilter === 'all'"
+      (click)="applyFilter('all')">
+      All Questions
+    </button>
+    <button 
+      [class.active]="activeFilter === 'correct'"
+      (click)="applyFilter('correct')">
+      Correct Attempts
+    </button>
+    <button 
+      [class.active]="activeFilter === 'incorrect'"
+      (click)="applyFilter('incorrect')">
+      Failed Attempts
+    </button>
+  </div>
+  
+  <div class="stats-grid">
+    <div class="stat-card" *ngFor="let question of filteredQuestions">
+      <div class="question-text">{{question.question}}</div>
+      <div class="stats">
+        <p>Correct Attempts: {{question.correctAttempts}}</p>
+        <p>Failed Attempts: {{question.failedAttempts}}</p>
+        <p>Success Rate: {{question.correctAttempts + question.failedAttempts === 0 ? 0 : 
+          (question.correctAttempts / (question.correctAttempts + question.failedAttempts) * 100).toFixed(1)}}%</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-actions">
+    <button class="reset-button" (click)="resetStats()">
+      Reset Statistics
+    </button>
+  </div>
+</div> 

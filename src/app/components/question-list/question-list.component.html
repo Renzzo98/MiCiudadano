@@ -1,0 +1,7 @@
+<div class="question-list">
+  <app-question-card 
+    *ngIf="currentQuestion"
+    [question]="currentQuestion"
+    (answered)="onQuestionAnswered($event)">
+  </app-question-card>
+</div> 
