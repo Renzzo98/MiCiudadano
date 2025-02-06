@@ -2,6 +2,8 @@
 
 An interactive web application designed to help users prepare for the U.S. Citizenship Test. Built with Angular and featuring a military-inspired design theme, this application provides an engaging way to practice citizenship test questions.
 
+🌐 **Live Demo**: [https://citzpractest.web.app](https://citzpractest.web.app)
+
 ## Features
 
 - **Interactive Question Cards**: Practice with flashcard-style questions
@@ -75,3 +77,48 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Deployment
+
+The application is deployed using Firebase Hosting. There are two ways to deploy:
+
+### Quick Deploy (Recommended)
+
+After setting up Firebase (steps 1, 2, and 4 below), you can deploy with a single command:
+```bash
+npm run deploy
+```
+
+### Manual Deploy
+
+If you need more control over the deployment process, you can follow these steps:
+
+1. Install Firebase CLI:
+```bash
+npm install -g firebase-tools
+```
+
+2. Login to Firebase:
+```bash
+firebase login
+```
+
+3. Build the production version:
+```bash
+ng build --configuration production
+```
+
+4. Configure Firebase hosting (if not already configured):
+```bash
+firebase init hosting
+```
+   - For the public directory, use: `dist/mi-ciudadano/browser`
+   - Configure as a single-page app: Yes
+   - Set up automatic builds and deploys with GitHub: No
+
+5. Deploy to Firebase:
+```bash
+firebase deploy --only hosting
+```
+
+The application will be deployed to [https://citzpractest.web.app](https://citzpractest.web.app)

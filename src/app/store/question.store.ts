@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Question } from '../models/question.model';
 import { QUESTIONS } from '../data/questions.const';
+import { isPlatformBrowser } from '@angular/common';
 
 const STORAGE_KEY = 'question_stats';
 
@@ -16,37 +17,44 @@ export class QuestionStore {
   private currentQuestionIndexSubject = new BehaviorSubject<number>(0);
   currentQuestionIndex$ = this.currentQuestionIndexSubject.asObservable();
 
-  constructor() {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.loadQuestions();
   }
 
   private loadQuestions() {
-    // Try to load stats from localStorage
-    const savedStats = localStorage.getItem(STORAGE_KEY);
-    if (savedStats) {
-      const stats = JSON.parse(savedStats);
-      // Merge saved stats with questions
-      this.questions = QUESTIONS.map(q => ({
-        ...q,
-        correctAttempts: stats[q.id]?.correctAttempts ?? 0,
-        failedAttempts: stats[q.id]?.failedAttempts ?? 0
-      }));
+    if (isPlatformBrowser(this.platformId)) {
+      // Try to load stats from localStorage only in browser environment
+      const savedStats = localStorage.getItem(STORAGE_KEY);
+      if (savedStats) {
+        const stats = JSON.parse(savedStats);
+        // Merge saved stats with questions
+        this.questions = QUESTIONS.map(q => ({
+          ...q,
+          correctAttempts: stats[q.id]?.correctAttempts ?? 0,
+          failedAttempts: stats[q.id]?.failedAttempts ?? 0
+        }));
+      } else {
+        this.questions = [...QUESTIONS];
+      }
     } else {
+      // In server environment, just use the base questions
       this.questions = [...QUESTIONS];
     }
     this.questionsSubject.next(this.questions);
   }
 
   private saveToLocalStorage() {
-    // Save only the stats part to localStorage
-    const stats = this.questions.reduce((acc, q) => ({
-      ...acc,
-      [q.id]: {
-        correctAttempts: q.correctAttempts,
-        failedAttempts: q.failedAttempts
-      }
-    }), {});
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
+    if (isPlatformBrowser(this.platformId)) {
+      // Save only in browser environment
+      const stats = this.questions.reduce((acc, q) => ({
+        ...acc,
+        [q.id]: {
+          correctAttempts: q.correctAttempts,
+          failedAttempts: q.failedAttempts
+        }
+      }), {});
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
+    }
   }
 
   getCurrentQuestion(): Observable<Question> {
