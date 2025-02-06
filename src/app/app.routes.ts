@@ -4,6 +4,7 @@ import { SessionComponent } from './screen/session/session.component';
 import { AnalyticsScreenComponent } from './screen/analytics/analytics-screen.component';
 import { ResultsComponent } from './screen/results/results.component';
 import { SetupScreenComponent } from './screen/setup/setup-screen.component';
+import { ProgressScreenComponent } from './screen/progress/progress-screen.component';
 
 export const routes: Routes = [
   {
@@ -25,5 +26,9 @@ export const routes: Routes = [
   {
     path: 'analytics',
     component: AnalyticsScreenComponent
+  },
+  {
+    path: 'progress',
+    component: ProgressScreenComponent
   }
 ];

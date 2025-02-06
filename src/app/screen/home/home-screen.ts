@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import './home-screen.css';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-home-screen',
@@ -10,5 +11,15 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink]
 })
 export class HomeScreenComponent {
-  // Component logic can go here
+  constructor(
+    private router: Router,
+    private sessionService: SessionService
+  ) {}
+
+  startRandomSession(): void {
+    // Generate random number between 1 and 100
+    const randomCount = Math.floor(Math.random() * 100) + 1;
+    this.sessionService.startNewSession(randomCount);
+    this.router.navigate(['/session']);
+  }
 } 

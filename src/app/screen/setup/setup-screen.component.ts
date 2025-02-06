@@ -23,7 +23,6 @@ export class SetupScreenComponent {
   ) {}
 
   startSession() {
-    console.log(this.questionCount);
     this.sessionService.startNewSession(this.questionCount);
     this.router.navigate(['/session']);
   }

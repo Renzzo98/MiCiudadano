@@ -23,8 +23,6 @@ export class SessionService {
 
   startNewSession(questionCount: number): void {
     this.sessionQuestions = this.questionStore.getQuestions(questionCount);
-    console.log('questionCount', questionCount);
-    console.log(this.sessionQuestions);
     this.currentIndex = 0;
     this.correctCount = 0;
     this.incorrectCount = 0;
@@ -53,7 +51,7 @@ export class SessionService {
     }
   }
 
-  private endSession(): void {
+  endSession(): void {
     this.router.navigate(['/results'], {
       queryParams: {
         numCorrect: this.correctCount,
@@ -68,5 +66,12 @@ export class SessionService {
 
   getTotalQuestions(): number {
     return this.sessionQuestions.length;
+  }
+
+  getSessionStats() {
+    return {
+      correctCount: this.correctCount,
+      incorrectCount: this.incorrectCount
+    };
   }
 } 

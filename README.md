@@ -6,22 +6,46 @@ An interactive web application designed to help users prepare for the U.S. Citiz
 
 ## Features
 
-- **Interactive Question Cards**: Practice with flashcard-style questions
+### Practice Modes
+- **Custom Practice**: Choose your own number of questions for focused study sessions
+- **Random Practice**: Quick-start option that generates a random number of questions (1-100)
+- **Interactive Question Cards**: 
   - Flip animation for question/answer reveal
   - Visual bookmark indicator for flagged questions
   - Scrollable answer content for longer answers
   - Correct/incorrect response tracking
-- **Progress Tracking**: Keep track of your progress through questions
-- **Performance Analytics**: View detailed statistics about your practice sessions
+
+### Progress Tracking
+- **Overall Progress Dashboard**:
+  - Visual progress bars for overall completion
+  - Category-based progress tracking
+  - Questions mastered per category
+  - Success rate indicators
+
+### Performance Analytics
+- **Detailed Statistics**:
   - Track correct and incorrect attempts
   - Monitor success rates for each question
-  - Filter questions by performance
-- **Session Customization**: 
-  - Choose the number of questions for each practice session
-  - Random question selection for varied practice
-- **Persistent Progress**: Your practice statistics are saved locally
-- **Mobile-Friendly Design**: Responsive interface that works on all devices
-- **Question Categories**: Questions organized by topics including:
+  - Filter questions by performance (all/correct/incorrect)
+  - Reset statistics option
+
+### Session Management
+- **Flexible Session Control**:
+  - Start custom practice sessions
+  - Quick-start random sessions
+  - Exit session anytime with progress saved
+  - Session results summary
+- **Progress Persistence**: Statistics and progress saved locally
+
+### User Interface
+- **Modern Military Theme**:
+  - Clean, professional design
+  - Responsive layout for all devices
+  - Intuitive navigation
+  - Visual feedback and animations
+
+### Content Organization
+- **Comprehensive Question Categories**:
   - Principles of American Democracy
   - System of Government
   - Rights and Responsibilities
@@ -29,18 +53,6 @@ An interactive web application designed to help users prepare for the U.S. Citiz
   - Geography
   - Symbols and Holidays
   - Recent American History
-
-## Current Implementation
-
-- Home screen with practice session setup
-- Interactive question cards with flip animation and bookmark indicators
-- Detailed analytics dashboard with filtering options
-- Progress persistence using local storage
-- Military-themed UI with modern design elements
-- Session-based practice mode with randomized questions
-- Performance tracking and statistics
-- Comprehensive question database with categorization
-- Visual indicators for flagged/important questions
 
 ## Getting Started
 
@@ -127,7 +139,7 @@ If you need more control over the deployment process:
 
 1. Install Firebase CLI:
 ```bash
-npm install -g firebase-tools
+firebase install -g firebase-tools
 ```
 
 2. Login to Firebase:
