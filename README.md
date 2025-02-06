@@ -80,18 +80,34 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Deployment
 
-The application is deployed using Firebase Hosting. There are two ways to deploy:
+The application is deployed using Firebase Hosting. There are three ways to deploy:
 
-### Quick Deploy (Recommended)
+### Automated Deployment (Recommended)
 
-After setting up Firebase (steps 1, 2, and 4 below), you can deploy with a single command:
+The application automatically deploys to Firebase when changes are pushed to the main branch, using GitHub Actions. The workflow:
+1. Builds the application
+2. Runs tests
+3. Deploys to Firebase Hosting
+
+To set this up:
+1. Fork/clone the repository
+2. Set up the `FIREBASE_SERVICE_ACCOUNT_CITZPRACTEST` secret in your GitHub repository:
+   - Go to Firebase Console > Project Settings > Service Accounts
+   - Generate a new private key
+   - In your GitHub repo: Settings > Secrets > Actions > New Secret
+   - Name: `FIREBASE_SERVICE_ACCOUNT_CITZPRACTEST`
+   - Value: Paste the entire JSON content
+
+### Quick Deploy (Local)
+
+For local deployment, after setting up Firebase (steps 1, 2, and 4 below), you can deploy with:
 ```bash
 npm run deploy
 ```
 
 ### Manual Deploy
 
-If you need more control over the deployment process, you can follow these steps:
+If you need more control over the deployment process:
 
 1. Install Firebase CLI:
 ```bash
