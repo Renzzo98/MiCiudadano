@@ -7,24 +7,40 @@ An interactive web application designed to help users prepare for the U.S. Citiz
 ## Features
 
 - **Interactive Question Cards**: Practice with flashcard-style questions
+  - Flip animation for question/answer reveal
+  - Visual bookmark indicator for flagged questions
+  - Scrollable answer content for longer answers
+  - Correct/incorrect response tracking
 - **Progress Tracking**: Keep track of your progress through questions
 - **Performance Analytics**: View detailed statistics about your practice sessions
   - Track correct and incorrect attempts
   - Monitor success rates for each question
   - Filter questions by performance
-- **Session Customization**: Choose the number of questions for each practice session
+- **Session Customization**: 
+  - Choose the number of questions for each practice session
+  - Random question selection for varied practice
 - **Persistent Progress**: Your practice statistics are saved locally
 - **Mobile-Friendly Design**: Responsive interface that works on all devices
+- **Question Categories**: Questions organized by topics including:
+  - Principles of American Democracy
+  - System of Government
+  - Rights and Responsibilities
+  - Colonial Period and Independence
+  - Geography
+  - Symbols and Holidays
+  - Recent American History
 
 ## Current Implementation
 
 - Home screen with practice session setup
-- Interactive question cards with flip animation
-- Detailed analytics dashboard
+- Interactive question cards with flip animation and bookmark indicators
+- Detailed analytics dashboard with filtering options
 - Progress persistence using local storage
 - Military-themed UI with modern design elements
-- Session-based practice mode
+- Session-based practice mode with randomized questions
 - Performance tracking and statistics
+- Comprehensive question database with categorization
+- Visual indicators for flagged/important questions
 
 ## Getting Started
 

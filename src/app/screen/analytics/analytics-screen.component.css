@@ -69,10 +69,14 @@ h1 {
   margin-bottom: 2rem;
   padding: 0 1rem;
   overflow-x: auto;
+  overflow-y: hidden; /* Prevent vertical scrolling */
   white-space: nowrap;
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   scrollbar-width: thin; /* Firefox */
   scrollbar-color: var(--military-green-darker) transparent; /* Firefox */
+  /* Ensure consistent height */
+  height: 48px; /* Match the height of your buttons */
+  align-items: center; /* Center buttons vertically */
 }
 
 /* Webkit scrollbar styling */
@@ -99,6 +103,10 @@ h1 {
   cursor: pointer;
   transition: all 0.3s ease;
   flex-shrink: 0; /* Prevent buttons from shrinking */
+  height: 42px; /* Fixed height for buttons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .filter-buttons button:hover {
@@ -119,8 +127,108 @@ h1 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.answer-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.answers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.answer-option {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.answer-option.correct {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+  border-left: 4px solid #4caf50;
+}
+
+.answer-option i {
+  color: #4caf50;
+}
+
+.answer-label {
+  display: block;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .stats {
   opacity: 0.9;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.stat-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.2rem 0.8rem;
+  border-radius: 4px;
+  min-width: 3rem;
+  text-align: center;
+}
+
+.correct-value {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+}
+
+.failed-value {
+  background-color: rgba(244, 67, 54, 0.2);
+  color: #f44336;
+}
+
+.high-rate {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+}
+
+.medium-rate {
+  background-color: rgba(255, 152, 0, 0.2);
+  color: #ff9800;
+}
+
+.low-rate {
+  background-color: rgba(244, 67, 54, 0.2);
+  color: #f44336;
 }
 
 .bottom-actions {

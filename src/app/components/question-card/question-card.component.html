@@ -2,6 +2,7 @@
   <div class="card-inner">
     <!-- Front of card -->
     <div class="card-front">
+      <div class="bookmark" *ngIf="question.flagged"></div>
       <h2 class="question">{{question.question}}</h2>
       <button class="reveal-button" (click)="flipCard()">
         Show Answer
@@ -10,9 +11,12 @@
     
     <!-- Back of card -->
     <div class="card-back">
-        <div class="answer-content">
-            <h3 class="answer">{{question.correctAnswer}}</h3>
+      <div class="answer-content" #answerContent (scroll)="onAnswerScroll($event)">
+        <h3 class="answer" *ngFor="let answer of question.correctAnswers">{{answer}}</h3>
+        <div class="scroll-indicator" [class.visible]="showScrollIndicator">
+          <i class="fas fa-chevron-down"></i>
         </div>
+      </div>
     </div>
   </div>
 </div>

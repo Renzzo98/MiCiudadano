@@ -10,7 +10,9 @@
     <div class="content">
       <div class="input-group">
         <label class="question-count-label">Number of Questions: <br><span class="question-count">{{questionCount}}</span></label>
-        <div class="slider-container">
+        <div class="slider-container"
+             (touchstart)="handleTouchStart($event)"
+             (touchmove)="handleTouchMove($event)">
           <input type="range" 
                  [(ngModel)]="questionCount" 
                  min="1" 

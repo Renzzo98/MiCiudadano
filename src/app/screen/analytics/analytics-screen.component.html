@@ -28,11 +28,36 @@
   <div class="stats-grid">
     <div class="stat-card" *ngFor="let question of filteredQuestions">
       <div class="question-text">{{question.question}}</div>
+      <div class="answer-text">
+        <span class="answer-label">Answers:</span>
+        <div class="answers-list">
+          <div *ngFor="let answer of question.correctAnswers" 
+               class="answer-option"
+               [class.correct]="question.correctAnswers.includes(answer)">
+            {{ answer }}
+            <i *ngIf="question.correctAnswers.includes(answer)" class="fas fa-check"></i>
+          </div>
+        </div>
+      </div>
       <div class="stats">
-        <p>Correct Attempts: {{question.correctAttempts}}</p>
-        <p>Failed Attempts: {{question.failedAttempts}}</p>
-        <p>Success Rate: {{question.correctAttempts + question.failedAttempts === 0 ? 0 : 
-          (question.correctAttempts / (question.correctAttempts + question.failedAttempts) * 100).toFixed(1)}}%</p>
+        <div class="stat-item">
+          <span class="stat-label">Correct Attempts</span>
+          <span class="stat-value correct-value">{{question.correctAttempts}}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Failed Attempts</span>
+          <span class="stat-value failed-value">{{question.failedAttempts}}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Success Rate</span>
+          <span class="stat-value" [class.high-rate]="(question.correctAttempts / (question.correctAttempts + question.failedAttempts) * 100) >= 70"
+                                  [class.medium-rate]="(question.correctAttempts / (question.correctAttempts + question.failedAttempts) * 100) >= 40 && 
+                                                     (question.correctAttempts / (question.correctAttempts + question.failedAttempts) * 100) < 70"
+                                  [class.low-rate]="(question.correctAttempts / (question.correctAttempts + question.failedAttempts) * 100) < 40">
+            {{question.correctAttempts + question.failedAttempts === 0 ? 0 : 
+            (question.correctAttempts / (question.correctAttempts + question.failedAttempts) * 100).toFixed(1)}}%
+          </span>
+        </div>
       </div>
     </div>
   </div>
