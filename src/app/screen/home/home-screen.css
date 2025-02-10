@@ -109,9 +109,9 @@
     padding: 1.2rem;
     font-size: 1.3rem;
     font-weight: bold;
-    background-color: var(--military-green-dark);
-    color: white;
-    border: 2px solid var(--military-green-darker);
+    background-color: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+    border: 2px solid #ffd700;
     border-radius: 8px;
     cursor: pointer;
     text-transform: uppercase;
@@ -121,17 +121,26 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(255, 215, 0, 0.1);
+    animation: shimmer 2s infinite;
 }
 
 .start-button:hover {
-    background-color: var(--military-green-darker);
+    background-color: #ffd700;
+    color: var(--military-green-darker);
     transform: scale(1.02);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(255, 215, 0, 0.2);
 }
 
 .start-button i {
     font-size: 1.2rem;
+    color: inherit;
+}
+
+@keyframes shimmer {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
 }
 
 @media (min-width: 768px) {

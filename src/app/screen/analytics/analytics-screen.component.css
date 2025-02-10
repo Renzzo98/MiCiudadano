@@ -151,13 +151,12 @@ h1 {
 }
 
 .answer-option.correct {
-  background-color: rgba(76, 175, 80, 0.2);
-  color: #4caf50;
-  border-left: 4px solid #4caf50;
+  background-color: rgba(255, 215, 0, 0.1);
+  border-left: 4px solid #ffd700;
 }
 
-.answer-option i {
-  color: #4caf50;
+.answer-option i.fa-check {
+  color: #ffd700;
 }
 
 .answer-label {
@@ -217,8 +216,8 @@ h1 {
 }
 
 .high-rate {
-  background-color: rgba(76, 175, 80, 0.2);
-  color: #4caf50;
+  background-color: rgba(255, 215, 0, 0.1);
+  color: #ffd700;
 }
 
 .medium-rate {
@@ -256,4 +255,29 @@ h1 {
   transform: scale(1.05);
   background-color: white;
   color: #c62828;
+}
+
+/* Update star icon styles */
+.answer-option.correct i.fa-check::before {
+  content: "\f005"; /* Font Awesome star icon */
+}
+
+/* Add shimmer animation for gold elements */
+@keyframes shimmer {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.answer-option.correct i,
+.correct-value,
+.high-rate {
+  animation: shimmer 2s infinite;
+}
+
+/* Update hover effect for correct answers */
+.answer-option.correct:hover {
+  background-color: rgba(255, 215, 0, 0.2);
+  transform: translateX(5px) scale(1.01);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
 } 

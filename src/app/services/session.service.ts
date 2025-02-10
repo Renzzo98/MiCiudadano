@@ -4,6 +4,11 @@ import { Router } from '@angular/router';
 import { Question } from '../models/question.model';
 import { QuestionStore } from '../store/question.store';
 
+interface SessionAnswer {
+  question: Question;
+  isCorrect: boolean;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +17,7 @@ export class SessionService {
   private currentIndex = 0;
   private correctCount = 0;
   private incorrectCount = 0;
+  private answeredQuestions: SessionAnswer[] = [];
 
   private currentQuestionSubject = new BehaviorSubject<Question | null>(null);
   currentQuestion$ = this.currentQuestionSubject.asObservable();
@@ -26,6 +32,7 @@ export class SessionService {
     this.currentIndex = 0;
     this.correctCount = 0;
     this.incorrectCount = 0;
+    this.answeredQuestions = [];
     this.updateCurrentQuestion();
   }
 
@@ -37,6 +44,12 @@ export class SessionService {
     const currentQuestion = this.sessionQuestions[this.currentIndex];
     this.questionStore.updateQuestionAttempt(currentQuestion.id, isCorrect);
     
+    // Track the answered question
+    this.answeredQuestions.push({
+      question: currentQuestion,
+      isCorrect: isCorrect
+    });
+
     if (isCorrect) {
       this.correctCount++;
     } else {
@@ -55,7 +68,8 @@ export class SessionService {
     this.router.navigate(['/results'], {
       queryParams: {
         numCorrect: this.correctCount,
-        numWrong: this.incorrectCount
+        numWrong: this.incorrectCount,
+        sessionId: Date.now() // Add timestamp to identify the session
       }
     });
   }
@@ -71,7 +85,9 @@ export class SessionService {
   getSessionStats() {
     return {
       correctCount: this.correctCount,
-      incorrectCount: this.incorrectCount
+      incorrectCount: this.incorrectCount,
+      answeredQuestions: this.answeredQuestions,
+      remainingQuestions: this.sessionQuestions.slice(this.currentIndex + 1)
     };
   }
 } 

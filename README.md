@@ -14,35 +14,50 @@ An interactive web application designed to help users prepare for the U.S. Citiz
   - Visual bookmark indicator for flagged questions
   - Scrollable answer content for longer answers
   - Correct/incorrect response tracking
+  - Gold star indicators for correct answers
 
 ### Progress Tracking
 - **Overall Progress Dashboard**:
   - Visual progress bars for overall completion
   - Category-based progress tracking
   - Questions mastered per category
-  - Success rate indicators
+  - Success rate indicators with gold highlights
+  - Performance analytics with visual feedback
 
 ### Performance Analytics
 - **Detailed Statistics**:
   - Track correct and incorrect attempts
   - Monitor success rates for each question
   - Filter questions by performance (all/correct/incorrect)
+  - Gold star indicators for mastered questions
   - Reset statistics option
+
+### Study Materials
+- **Bilingual Study Guide Export**:
+  - Generate comprehensive study guides in both English and Spanish
+  - Session summary with performance metrics
+  - Complete question history
+  - Detailed review of incorrect answers
+  - Clear separation between languages
+  - Downloadable text format for easy access
 
 ### Session Management
 - **Flexible Session Control**:
   - Start custom practice sessions
   - Quick-start random sessions
   - Exit session anytime with progress saved
-  - Session results summary
+  - Detailed session results summary
+  - Export session results in multiple languages
 - **Progress Persistence**: Statistics and progress saved locally
 
 ### User Interface
 - **Modern Military Theme**:
   - Clean, professional design
+  - Gold accents for achievements and correct answers
   - Responsive layout for all devices
   - Intuitive navigation
   - Visual feedback and animations
+  - Shimmer effects on important elements
 
 ### Content Organization
 - **Comprehensive Question Categories**:
