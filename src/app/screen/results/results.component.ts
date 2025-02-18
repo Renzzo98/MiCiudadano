@@ -95,7 +95,7 @@ export class ResultsComponent implements OnInit {
     spanishContent += `Historial de Preguntas:\n`;
     spanishContent += `---------------------\n\n`;
     this.sessionAnswers.forEach((answer, index) => {
-      spanishContent += `${index + 1}. ${answer.question.question}\n`;
+      spanishContent += `${index + 1}. ${answer.question.spanishVer.question}\n`;
       spanishContent += `Resultado: ${answer.isCorrect ? '✓ Correcto' : '✗ Incorrecto'}\n\n`;
     });
 
@@ -103,9 +103,9 @@ export class ResultsComponent implements OnInit {
       spanishContent += `Preguntas para Repasar:\n`;
       spanishContent += `----------------------\n\n`;
       this.failedQuestions.forEach((answer, index) => {
-        spanishContent += `${index + 1}. ${answer.question.question}\n`;
+        spanishContent += `${index + 1}. ${answer.question.spanishVer.question}\n`;
         spanishContent += `Respuesta(s) Correcta(s):\n`;
-        answer.question.correctAnswers.forEach(correctAnswer => {
+        answer.question.spanishVer.correctAnswers.forEach(correctAnswer => {
           spanishContent += `• ${correctAnswer}\n`;
         });
         spanishContent += `\n`;

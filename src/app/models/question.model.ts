@@ -1,3 +1,11 @@
+export interface TranslatedQuestion {
+  id: number;
+  question: string;
+  category: string;
+  possibleAnswers: string[];
+  correctAnswers: string[];
+}
+
 export interface Question {
   id: number;
   question: string;
@@ -7,4 +15,5 @@ export interface Question {
   correctAnswers: string[];
   correctAttempts: number;
   failedAttempts: number;
+  spanishVer: TranslatedQuestion;
 } 
