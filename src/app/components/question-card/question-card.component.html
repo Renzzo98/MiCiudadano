@@ -3,7 +3,13 @@
     <!-- Front of card -->
     <div class="card-front">
       <div class="bookmark" *ngIf="question.flagged"></div>
-      <h2 class="question">{{question.question}}</h2>
+      <div class="language-toggle">
+        <button class="toggle-button" (click)="toggleLanguage()">
+          <i class="fas fa-language"></i>
+          {{ isSpanish ? 'ES' : 'EN' }}
+        </button>
+      </div>
+      <h2 class="question">{{isSpanish ? question.spanishVer.question : question.question}}</h2>
       <button class="reveal-button" (click)="flipCard()">
         Show Answer
       </button>
@@ -11,8 +17,14 @@
     
     <!-- Back of card -->
     <div class="card-back">
+      <div class="language-toggle">
+        <button class="toggle-button" (click)="toggleLanguage()">
+          <i class="fas fa-language"></i>
+          {{ isSpanish ? 'ES' : 'EN' }}
+        </button>
+      </div>
       <div class="answer-content" #answerContent (scroll)="onAnswerScroll($event)">
-        <h3 class="answer" *ngFor="let answer of question.correctAnswers">{{answer}}</h3>
+        <h3 class="answer" *ngFor="let answer of (isSpanish ? question.spanishVer.correctAnswers : question.correctAnswers)">{{answer}}</h3>
         <div class="scroll-indicator" [class.visible]="showScrollIndicator">
           <i class="fas fa-chevron-down"></i>
         </div>

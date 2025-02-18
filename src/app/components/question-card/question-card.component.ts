@@ -16,10 +16,15 @@ export class QuestionCardComponent implements AfterViewInit {
   
   isFlipped = false;
   showScrollIndicator = false;
+  isSpanish = false;
 
   ngAfterViewInit() {
     // Check if content is scrollable after view initialization
     this.checkScrollable();
+  }
+
+  toggleLanguage(): void {
+    this.isSpanish = !this.isSpanish;
   }
 
   flipCard(): void {
