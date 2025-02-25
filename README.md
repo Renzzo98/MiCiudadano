@@ -1,4 +1,4 @@
-# Mi Ciudadano --- U.S. Citizenship Test Practice
+# Mi Ciudadano: U.S. Citizenship Test Practice
 
 An interactive web application designed to help users prepare for the U.S. Citizenship Test. Built with Angular and featuring a military-inspired design theme, this application provides an engaging way to practice citizenship test questions.
 
