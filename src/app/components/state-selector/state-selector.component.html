@@ -1,0 +1,13 @@
+<div class="state-selector">
+    <select [(ngModel)]="selectedState" (ngModelChange)="onStateChange($event)" class="state-dropdown">
+      <option *ngFor="let state of states" [value]="state.abbreviation">
+        {{state.name}}
+      </option>
+    </select>
+    <div class="tooltip-container">
+      <i class="fas fa-info-circle info-icon"></i>
+      <div class="tooltip">
+        We use your state to provide accurate answers for questions about your local representatives, including your state governor, U.S. senators, and congressional representative.
+      </div>
+    </div>
+</div>

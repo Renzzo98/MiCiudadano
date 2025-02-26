@@ -1,0 +1,76 @@
+.state-selector {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+  
+.state-dropdown {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 1rem;
+    min-width: 200px;
+    cursor: pointer;
+}
+
+.state-dropdown:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.info-icon {
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: help;
+    transition: color 0.3s ease;
+}
+
+.info-icon:hover {
+    color: #fff;
+}
+
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-top: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: 10px;
+    border-width: 0 6px 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.9) transparent;
+}
+
+.tooltip-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}

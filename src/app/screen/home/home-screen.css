@@ -4,19 +4,23 @@
 }
 
 .home-container {
-    height: 100vh;
-    background-color: var(--military-green-primary);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--military-green-primary);
 }
 
 .content-container {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 2rem;
-    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.state-selector-container {
+    width: 100%;
+    padding: 2rem;
 }
 
 .hero-section {
@@ -98,10 +102,9 @@
 }
 
 .content {
+    display: flex;
+    justify-content: center;
     width: 100%;
-    max-width: 400px;
-    position: relative;
-    margin-top: auto;
 }
 
 .start-button {

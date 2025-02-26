@@ -1,0 +1,25 @@
+.footer-disclaimer {
+    background-color: var(--military-green-primary);
+    padding: 1rem 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.update-info, .version-info {
+    color: white;
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.disclaimer-text {
+    color: white;
+    font-size: 0.8rem;
+    margin: 0.5rem 0 0;
+}

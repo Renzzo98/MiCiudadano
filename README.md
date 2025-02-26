@@ -6,6 +6,13 @@ An interactive web application designed to help users prepare for the U.S. Citiz
 
 ## Features
 
+### Dynamic State-Specific Content
+- **State Officials Integration**:
+  - Select your state to see state-specific answers
+  - Dynamic updates for Governor, Senators, and Representatives
+  - Persistent state selection across sessions
+  - Real-time answer updates when changing states
+
 ### Practice Modes
 - **Custom Practice**: Choose your own number of questions for focused study sessions
 - **Random Practice**: Quick-start option that generates a random number of questions (1-100)
@@ -15,6 +22,7 @@ An interactive web application designed to help users prepare for the U.S. Citiz
   - Scrollable answer content for longer answers
   - Correct/incorrect response tracking
   - Gold star indicators for correct answers
+  - Dynamic answers based on selected state
 
 ### Progress Tracking
 - **Overall Progress Dashboard**:
@@ -58,6 +66,11 @@ An interactive web application designed to help users prepare for the U.S. Citiz
   - Intuitive navigation
   - Visual feedback and animations
   - Shimmer effects on important elements
+- **Footer Disclaimer**:
+  - Version information display
+  - Last data update timestamp
+  - Educational purpose disclaimer
+  - USCIS verification reference
 
 ### Content Organization
 - **Comprehensive Question Categories**:

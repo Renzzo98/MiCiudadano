@@ -24,7 +24,7 @@
         </button>
       </div>
       <div class="answer-content" #answerContent (scroll)="onAnswerScroll($event)">
-        <h3 class="answer" *ngFor="let answer of (isSpanish ? question.spanishVer.correctAnswers : question.correctAnswers)">{{answer}}</h3>
+        <h3 class="answer" *ngFor="let answer of currentAnswers">{{answer}}</h3>
         <div class="scroll-indicator" [class.visible]="showScrollIndicator">
           <i class="fas fa-chevron-down"></i>
         </div>
